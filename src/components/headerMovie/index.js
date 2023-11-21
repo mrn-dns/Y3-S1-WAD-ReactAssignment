@@ -12,9 +12,7 @@ const MovieHeader = (props) => {
   const navigate = useNavigate();
 
   return (
-    <Paper 
-        component="div" 
-        sx={{
+    <Paper component="div" sx={{
             display: "flex",
             justifyContent: "space-around",
             flexWrap: "wrap",

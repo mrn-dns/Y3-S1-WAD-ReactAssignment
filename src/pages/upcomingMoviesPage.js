@@ -8,7 +8,6 @@ import { useQuery } from "react-query";
 
 const UpcomingMoviePage = (props) => {
   const { data, error, isLoading, isError } = useQuery('upcoming', getUpcomingMovies)
-  const [movies, setMovies] = useState([]);
 
   if (isLoading) {
     return <Spinner />
@@ -19,12 +18,6 @@ const UpcomingMoviePage = (props) => {
   } 
 
   const upcomingMovies = data.results;
-
-  // useEffect(() => {
-  //   getUpcomingMovies().then(movies => {
-  //     setMovies(movies);
-  //   });
-  // }, []);
 
   return (
     <PageTemplate

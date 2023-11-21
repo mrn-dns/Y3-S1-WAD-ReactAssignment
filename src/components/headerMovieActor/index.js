@@ -5,7 +5,6 @@ import Paper from "@mui/material/Paper";
 import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
 import { useNavigate } from "react-router-dom";
-import MovieIcon from  "@mui/icons-material/Movie";
 import PermIdentityIcon from '@mui/icons-material/PermIdentity';
 
 const MovieActorHeader = (props) => {
