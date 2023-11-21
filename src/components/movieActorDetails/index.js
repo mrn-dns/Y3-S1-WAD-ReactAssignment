@@ -16,7 +16,22 @@ const root = {
     margin: 0,
 };
 
-const MovieActorDetails = ({ actors }) => {  
+const getGenderLabel = (gender) => {
+  switch (gender) {
+    case 1:
+      return "Female";
+    case 2:
+      return "Male";              //FUNCTION THAT DISPLAYS "GENDER" INSTEAD OF NUMERIC VALUES - COVERS ALL CASES
+    case 3:
+      return "Non-binary";
+    default:
+      return "Unknown";
+  }
+};   
+
+const MovieActorDetails = ({ actors }) => {
+
+  const genderLabel = getGenderLabel(actors.gender);
 
   return (
     <>
@@ -31,7 +46,7 @@ const MovieActorDetails = ({ actors }) => {
       <Paper component="ul" sx={{...root}}>
         <Chip icon={<AccountCircleIcon />} label={`${actors.name}`} />
         <Chip icon={<CalendarMonthIcon />} label={`${actors.birthday}`} />
-        <Chip icon={<TransgenderIcon />} label={`${actors.gender}`} />
+        <Chip icon={<TransgenderIcon />} label={genderLabel} />
       </Paper>
     </>
   );

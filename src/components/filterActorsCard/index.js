@@ -2,12 +2,8 @@ import Card from "@mui/material/Card";
 import CardMedia from "@mui/material/CardMedia";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
-import InputLabel from "@mui/material/InputLabel";
-import MenuItem from "@mui/material/MenuItem";
 import TextField from "@mui/material/TextField";
 import SearchIcon from "@mui/icons-material/Search";
-import FormControl from "@mui/material/FormControl";
-import Select from "@mui/material/Select";
 import img from '../../images/sly.jpg'
 import { getMovieActors } from "../../api/tmdb-api";
 import { useQuery } from "react-query";
@@ -35,11 +31,6 @@ const FilterActorsCard = (props) => {
 
   const actors = data?.actors ? [{ id: "0", name: "All" }, ...data.actors] : [];
   console.log(actors)
-
-  const handleChange = (e, type, value) => {
-    e.preventDefault();
-    props.onUserInput(type, value); // NEW
-  };
 
   const handleTextChange = (e) => {
     const { value } = e.target;

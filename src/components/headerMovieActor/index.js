@@ -6,8 +6,10 @@ import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
 import { useNavigate } from "react-router-dom";
 import MovieIcon from  "@mui/icons-material/Movie";
+import PermIdentityIcon from '@mui/icons-material/PermIdentity';
 
-const MovieActorHeader = (actors) => {
+const MovieActorHeader = (props) => {
+  const actors = props.actors;
   const navigate = useNavigate();
 
   return (
@@ -27,9 +29,9 @@ const MovieActorHeader = (actors) => {
 
       <Typography variant="h4" component="h3">
         {actors.name}
-        <br />
+        {/* <br /> */}
         <a href={`https://www.imdb.com/name/${actors.imdb_id}`}>
-          <MovieIcon color="primary" />
+          <PermIdentityIcon color="primary" sx={{ marginLeft: '10px' }} />
         </a>
       </Typography>
 
