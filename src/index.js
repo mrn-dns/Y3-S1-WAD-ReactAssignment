@@ -8,12 +8,14 @@ import MovieReviewPage from "./pages/movieReviewPage";
 import AddMovieReviewPage from './pages/addMovieReviewPage'
 import UpcomingMoviePage from "./pages/upcomingMoviesPage";
 import NowPlayingMoviePage from "./pages/nowPlayingMoviesPage";
-import SiteHeader from './components/siteHeader'
+import PopularMoviePage from "./pages/popularMoviesPage";
+import TopRatedMoviePage from "./pages/topRatedMoviesPage";
+import SiteHeader from './components/siteHeader';
 import { QueryClientProvider, QueryClient } from "react-query";
 import { ReactQueryDevtools } from 'react-query/devtools';
 import MoviesContextProvider from "./contexts/moviesContext";
-import PopularMoviePage from "./pages/popularMoviesPage";
-import TopRatedMoviePage from "./pages/topRatedMoviesPage";
+import MovieActorsPage from "./pages/movieActorsPage";
+import MovieActorDetailsPage from "./pages/movieActorsDetailsPage";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -40,6 +42,8 @@ const App = () => {
         <Route path="/movies/nowplayingmovies" element={<NowPlayingMoviePage />} />
         <Route path="/movies/popularmovies" element={<PopularMoviePage />} />
         <Route path="/movies/topratedmovies" element={<TopRatedMoviePage />} />
+        <Route path="/actors/" element={<MovieActorsPage />} />
+        <Route path="/actors/:id" element={<MovieActorDetailsPage />} />
         <Route path="/" element={<HomePage />} />
         <Route path="*" element={ <Navigate to="/" /> } />
       </Routes>
