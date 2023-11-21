@@ -8,7 +8,7 @@ import TextField from "@mui/material/TextField";
 import SearchIcon from "@mui/icons-material/Search";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
-import img from '../../images/pexels-dziana-hasanbekava-5480827.jpg'
+import img from '../../images/sly.jpg'
 import { getMovieActors } from "../../api/tmdb-api";
 import { useQuery } from "react-query";
 import Spinner from '../spinner'
@@ -35,6 +35,12 @@ const FilterActorsCard = (props) => {
 
   const actors = data?.actors ? [{ id: "0", name: "All" }, ...data.actors] : [];
   console.log(actors)
+
+  const handleChange = (e, type, value) => {
+    e.preventDefault();
+    props.onUserInput(type, value); // NEW
+  };
+
   const handleTextChange = (e) => {
     const { value } = e.target;
     onUserInput("name", value);
@@ -46,6 +52,7 @@ const FilterActorsCard = (props) => {
       variant="outlined"
     >
       <CardContent>
+        {/* SEARCH BY NAME */}
         <Typography variant="h5" component="h1">
           <SearchIcon fontSize="large" />
           Filter the actors.
