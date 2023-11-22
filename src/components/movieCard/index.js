@@ -44,7 +44,7 @@ export default function MovieCard({movie,action}) {
   // };
 
   return (
-    <Card sx={{ maxWidth: 345 }}>
+    <Card style={{ maxWidth: 300, margin: 'auto', marginTop: 20, padding: 16, borderRadius: 8, boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)', backgroundColor: '#2196F3', color: '#fff' }}>
       <CardHeader
         avatar={
           movie.favorite ? (
