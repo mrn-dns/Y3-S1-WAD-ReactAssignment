@@ -6,10 +6,14 @@ import MonetizationIcon from "@mui/icons-material/MonetizationOn";
 import StarRate from "@mui/icons-material/StarRate";
 import NavigationIcon from "@mui/icons-material/Navigation";
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
+import FingerprintIcon from '@mui/icons-material/Fingerprint';
 import Fab from "@mui/material/Fab";
 import Typography from "@mui/material/Typography";
 import Drawer from "@mui/material/Drawer";
 import MovieReviews from "../movieReviews"
+import { Link } from "react-router-dom";
+//New  Material UI component added
+import { Button } from "@mui/material";
 
 
 const root = {
@@ -48,14 +52,8 @@ const MovieDetails = ({ movie }) => {  // Don't miss this!
 
       <Paper component="ul" sx={{...root}}>
         <Chip icon={<AccessTimeIcon />} label={`${movie.runtime} min.`} />
-        <Chip
-          icon={<MonetizationIcon />}
-          label={`${movie.revenue.toLocaleString()}`}
-        />
-        <Chip
-          icon={<StarRate />}
-          label={`${movie.vote_average} (${movie.vote_count})`}
-        />
+        <Chip icon={<MonetizationIcon />} label={`${movie.revenue.toLocaleString()}`} />
+        <Chip icon={<StarRate />} label={`${movie.vote_average} (${movie.vote_count})`} />
         <Chip icon={<CalendarMonthIcon />} label={`Released: ${movie.release_date}`} />
       </Paper>
 
@@ -70,6 +68,18 @@ const MovieDetails = ({ movie }) => {  // Don't miss this!
           </li>
         ))}
       </Paper>
+
+      <Link to={`/movies/${movie.id}/similar`} style={{ textDecoration: 'none' }}>
+      <Button variant="contained" color="primary" style={{ marginTop: '16px' }}>
+        View Similar Movies
+      </Button>
+    </Link>
+    <Link to={`https://www.themoviedb.org/movie/${movie.id}/cast`} style={{ textDecoration: 'none' }} target="_blank" rel="noopener noreferrer">
+      <Button variant="contained" color="primary" style={{ marginTop: '16px',marginLeft: '16px' }}>
+        View Full Cast List
+      </Button>
+    </Link>
+
       <Fab
         color="secondary"
         variant="extended"
