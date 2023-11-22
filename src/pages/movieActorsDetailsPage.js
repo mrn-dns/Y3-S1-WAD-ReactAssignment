@@ -13,6 +13,7 @@ const MovieActorDetailsPage = (props) => {
     ["actors", { id: id }],
     getMovieActor
   );
+  console.log(actors);
 
   if (isLoading) {
     return <Spinner />;
