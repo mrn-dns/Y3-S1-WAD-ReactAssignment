@@ -11,18 +11,18 @@ import Typography from "@mui/material/Typography";
 import { useNavigate } from "react-router-dom";
 import FormControl from "@mui/material/FormControl";
 
-const getGenderLabel = (gender) => {
-  switch (gender) {
-    case 1:
-      return "Female";
-    case 2:
-      return "Male";
-    case 3:
-      return "Non-binary";
-    default:
-      return "Unknown";
-  }
-};
+// const getGenderLabel = (gender) => {
+//   switch (gender) {
+//     case 1:
+//       return "Female";
+//     case 2:
+//       return "Male";
+//     case 3:
+//       return "Non-binary";
+//     default:
+//       return "Unknown";
+//   }
+// };
 
 const Header = (props) => {
   // const genderLabel = getGenderLabel(props.gender);
@@ -35,8 +35,6 @@ const Header = (props) => {
   const title = props.title;
   const navigate = useNavigate();
 
-  // You can replace the genre-related code with actor-specific data fetching if needed
-
   const handleChange = (e, type, value) => {
     e.preventDefault();
     props.onUserInput(type, value);
@@ -47,7 +45,8 @@ const Header = (props) => {
   };
 
   const handleGenderChange = (e) => {
-    props.onUserInput("gender", e.target.value);
+    const selectedGender = e.target.value === "0" ? "" : e.target.value; // If "All" is selected, set to an empty string
+    props.onUserInput("gender", selectedGender);
   };
 
   return (
@@ -78,7 +77,7 @@ const Header = (props) => {
         label="Search field"
         type="search"
         variant="filled"
-        value={props.titleFilter} // Adjust the prop name
+        value={props.titleFilter} 
         onChange={handleTextChange}
       />
       <FormControl sx={{ ...formControl }}>
@@ -87,9 +86,10 @@ const Header = (props) => {
           labelId="gender-label"
           id="gender-select"
           defaultValue=""
-          value={props.genderFilter} // Adjust the prop name
+          value={props.genderFilter === "" ? "0" : props.genderFilter} 
           onChange={handleGenderChange}
         >
+          <MenuItem value="0">All</MenuItem>
           <MenuItem value={1}>Female</MenuItem>
           <MenuItem value={2}>Male</MenuItem>
           <MenuItem value={3}>Non-binary</MenuItem>

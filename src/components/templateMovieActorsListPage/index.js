@@ -13,7 +13,7 @@ function MovieActorsListPageTemplate({ actors, title, action }) {
       return m.name.toLowerCase().search(nameFilter.toLowerCase()) !== -1;
     })
     .filter((actor) => {
-      return genderFilter ? actor.gender === genderFilter : true;
+      return genderFilter === "" || actor.gender === genderFilter;
     });
 
   const handleChange = (type, value) => {
@@ -24,7 +24,7 @@ function MovieActorsListPageTemplate({ actors, title, action }) {
   return (
     <Grid container sx={{ padding: '20px' }}>
       <Grid item xs={12}>
-        <Header title={title} onUserInput={handleChange} />
+        <Header title={title} onUserInput={handleChange} genderFilter={genderFilter} />
       </Grid>
       <Grid item container spacing={5}>
         {/* <Grid key="find" item xs={12} sm={6} md={4} lg={3} xl={2}>
