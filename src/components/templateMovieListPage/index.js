@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Header from "../headerMovieList";
 import { Pagination } from "@mui/material";
+import Scroll from "../scroll";
 // import FilterCard from "../filterMoviesCard";
 import MovieList from "../movieList";
 import Grid from "@mui/material/Grid";
@@ -25,10 +26,11 @@ function MovieListPageTemplate({ movies, title, action }) {
 
   return (
     <Grid container sx={{ padding: '20px' }}>
+      <Scroll showBelow={250} />
       <Grid item xs={12}>
         <Header title={title} onUserInput={handleChange} />
       </Grid>
-      <Grid item xs={12} sx={{ display: 'flex', justifyContent: 'center', marginTop: '20px' }}>
+      <Grid item xs={12} sx={{ display: 'flex', justifyContent: 'center', marginTop: '10px', marginBottom: '10px' }}>
         <Pagination count={10} variant="outlined" color="secondary" />
       </Grid>
       <Grid item container spacing={5}>
