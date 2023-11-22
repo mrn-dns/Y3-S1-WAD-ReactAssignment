@@ -69,16 +69,19 @@ const MovieDetails = ({ movie }) => {  // Don't miss this!
         ))}
       </Paper>
 
-      <Link to={`/movies/${movie.id}/similar`} style={{ textDecoration: 'none' }}>
-      <Button variant="contained" color="primary" style={{ marginTop: '16px' }}>
-        View Similar Movies
-      </Button>
-    </Link>
-    <Link to={`https://www.themoviedb.org/movie/${movie.id}/cast`} style={{ textDecoration: 'none' }} target="_blank" rel="noopener noreferrer">
-      <Button variant="contained" color="primary" style={{ marginTop: '16px',marginLeft: '16px' }}>
-        View Full Cast List
-      </Button>
-    </Link>
+      {/* SIMILAR & CAST BUTTONS */}
+      <Paper component="ul" sx={{...root}}>
+          <Link to={`/movies/${movie.id}/similar`} style={{ textDecoration: 'none' }}>
+          <Button variant="contained" color="primary" style={{ marginTop: '16px' }}>
+            View Similar Movies
+          </Button>
+        </Link>
+        <Link to={`https://www.themoviedb.org/movie/${movie.id}/cast`} style={{ textDecoration: 'none' }} target="_blank" rel="noopener noreferrer">
+          <Button variant="contained" color="primary" style={{ marginTop: '16px',marginLeft: '16px' }}>
+            View Full Cast List
+          </Button>
+        </Link>
+      </Paper>
 
       <Fab
         color="secondary"
