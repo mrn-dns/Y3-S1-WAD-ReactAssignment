@@ -59,6 +59,7 @@ const Header = ( props ) => {
       sx={{
         display: "flex",
         justifyContent: "space-around",
+        alignItems: "center", // Center the child elements vertically
         flexWrap: "wrap",
         marginBottom: 1.5,
       }}
