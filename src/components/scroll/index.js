@@ -3,6 +3,8 @@ import { styled } from '@mui/system';
 import ExpandLessIcon from '@mui/icons-material/ExpandLess';
 import IconButton from '@mui/material/IconButton';
 
+// REFERENCE : https://juliapottinger.com/react-gatsby-scroll-to-top/
+
 const ScrollButton = styled(IconButton)(({ theme }) => ({
   zIndex: 2,
   position: 'fixed',

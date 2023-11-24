@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Header from "../headerActorList";
 import FilterActorsCard from "../filterActorsCard";
 import MovieActorList from "../movieActorList";
+import Scroll from "../scroll";
 import Grid from "@mui/material/Grid";
 
 function MovieActorsListPageTemplate({ actors, title, action }) {
@@ -23,6 +24,7 @@ function MovieActorsListPageTemplate({ actors, title, action }) {
 
   return (
     <Grid container sx={{ padding: '20px' }}>
+      <Scroll showBelow={250} />
       <Grid item xs={12}>
         <Header title={title} onUserInput={handleChange} genderFilter={genderFilter} />
       </Grid>
