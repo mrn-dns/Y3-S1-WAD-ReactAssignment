@@ -57,11 +57,6 @@ Other than firebase, no extra non-standard procedures were required to setup the
 + Signup page - users/signup
 + Login page - users/login
 
-## Images
-![til](src\images\scrollbutton.gif)
->Scroll button
-
-
 ## Independent learning (If relevant).
 
 + __Scroll up button__ - https://juliapottinger.com/react-gatsby-scroll-to-top/
