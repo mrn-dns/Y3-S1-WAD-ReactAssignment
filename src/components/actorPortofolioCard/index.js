@@ -9,7 +9,7 @@ import img from '../../images/film-poster-placeholder.png';
 import { CardActions } from "@mui/material";
 import Button from '@mui/material/Button';
 
-export default function ActorMovieCreditsCard({ movie }) {
+export default function ActorPortofolioCard({ movie }) {
 
       return (
         <Card sx={{ maxWidth: 345, border: '2px solid black', borderRadius: '5px', transition: 'transform 0.15s ease-in-out', '&:hover': {transform: 'scale(1.03)'}}}>

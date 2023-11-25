@@ -8,7 +8,7 @@ import Typography from "@mui/material/Typography";
 import { Link } from "react-router-dom";
 //New  Material UI component added
 import { Button } from "@mui/material";
-import ActorMovieCreditsCard from "../actorMovieCreditsCard";
+import ActorMovieCreditsCard from "../actorPortofolioCard";
 import { useQuery } from "react-query";
 import { Grid } from "@mui/material";
 import Drawer from "@mui/material/Drawer";

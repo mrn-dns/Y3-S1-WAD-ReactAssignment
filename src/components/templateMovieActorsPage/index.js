@@ -5,6 +5,7 @@ import ImageListItem from "@mui/material/ImageListItem";
 import { getActorImages } from "../../api/tmdb-api";
 import { useQuery } from "react-query";
 import Spinner from '../spinner'
+import Scroll from "../scroll";
 
 
 const TemplateMovieActorsPage = ({ actors, children }) => {
@@ -24,6 +25,7 @@ const TemplateMovieActorsPage = ({ actors, children }) => {
 
   return (
     <>
+      <Scroll showBelow={250} />
       <MovieActorHeader actors={actors} />
 
       <Grid container spacing={5} sx={{ padding: "15px" }}>

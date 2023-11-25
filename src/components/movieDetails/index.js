@@ -6,7 +6,6 @@ import MonetizationIcon from "@mui/icons-material/MonetizationOn";
 import StarRate from "@mui/icons-material/StarRate";
 import NavigationIcon from "@mui/icons-material/Navigation";
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
-import FingerprintIcon from '@mui/icons-material/Fingerprint';
 import Fab from "@mui/material/Fab";
 import Typography from "@mui/material/Typography";
 import Drawer from "@mui/material/Drawer";
