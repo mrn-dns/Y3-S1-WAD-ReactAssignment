@@ -12,8 +12,15 @@ import Snackbar from "@mui/material/Snackbar";
 import Alert from "@mui/material/Alert";
 import { useNavigate } from 'react-router-dom';
 import { auth } from '../firebase/firebase';
+import WavingHandIcon from '@mui/icons-material/WavingHand';
 
-const theme = createTheme();
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: '#6200ea', // Purple color
+    },
+  },
+});
 
 export default function Login() {
   const [email, setEmail] = useState('');
@@ -64,7 +71,7 @@ export default function Login() {
         </Snackbar>
       </>
 
-      <Card>
+      <Card sx={{ border: "2px solid #6200ea", backgroundColor: "#f0f0f0", padding: 3 }}>
         <Container component="main" maxWidth="xs">
           <CssBaseline />
           <Box
@@ -75,9 +82,8 @@ export default function Login() {
               alignItems: 'center',
             }}
           >
-            {}
+            <WavingHandIcon fontSize="large" color="primary" />
           </Box>
-          {}
           <Box component="form" noValidate onSubmit={(e) => { e.preventDefault(); handleSignIn(); }} sx={{ mt: 3 }}>
             <Grid container spacing={2}>
               <Grid item xs={12}>
@@ -90,6 +96,7 @@ export default function Login() {
                   autoComplete="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
+                  variant="outlined"
                 />
               </Grid>
               <Grid item xs={12}>
@@ -103,6 +110,7 @@ export default function Login() {
                   autoComplete="new-password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
+                  variant="outlined"
                 />
               </Grid>
             </Grid>
@@ -122,3 +130,4 @@ export default function Login() {
     </ThemeProvider>
   );
 }
+

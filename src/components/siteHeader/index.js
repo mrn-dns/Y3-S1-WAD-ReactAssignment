@@ -4,6 +4,8 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import IconButton from "@mui/material/IconButton";
 import Button from "@mui/material/Button";
+import WavingHandIcon from '@mui/icons-material/WavingHand';
+import LockIcon from '@mui/icons-material/Lock';
 import MenuIcon from "@mui/icons-material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import Menu from "@mui/material/Menu";
@@ -32,8 +34,8 @@ const SiteHeader = ({ history }) => {
     { label: "🌟Top Rated", path: "/movies/topratedmovies" },
     { label: "Actors", path: "/actors" },
     { label: "🔥Actors", path: "/actors/popularactors" },
-    { label: "Login", path: "/users/login" },
-    { label: "Signup", path: "/users/signup" },
+    { label: "Login", path: "/users/login", icon: <WavingHandIcon /> },
+    { label: "Signup", path: "/users/signup", icon: <LockIcon /> },
 
   ];
 
@@ -97,6 +99,7 @@ const SiteHeader = ({ history }) => {
                   <Button
                     key={opt.label}
                     color="inherit"
+                    startIcon={opt.icon}
                     onClick={() => handleMenuSelect(opt.path)}
                   >
                     {opt.label}

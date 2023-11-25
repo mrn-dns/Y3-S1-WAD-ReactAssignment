@@ -6,20 +6,24 @@ import TextField from '@mui/material/TextField';
 import Link from '@mui/material/Link';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
-import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
-import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Card from "@mui/material/Card";
 import Snackbar from "@mui/material/Snackbar";
 import Alert from "@mui/material/Alert";
 import { useNavigate } from 'react-router-dom';
+import LockIcon from '@mui/icons-material/Lock';
 import { auth } from '../firebase/firebase';
 
-const theme = createTheme();
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: '#6200ea',
+    },
+  },
+});
 
 export default function SignUp() {
-  const { signup } = auth;
   
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
@@ -43,8 +47,7 @@ export default function SignUp() {
       setError('');
       setLoading(true);
 
-      
-      await signup(data.get('email'), data.get('password'));
+      await auth.createUserWithEmailAndPassword(data.get('email'), data.get('password'));
 
       // Navigate after successful signup
       navigate("/");
@@ -83,7 +86,7 @@ export default function SignUp() {
           </Snackbar>
         )}
       </>
-      <Card>
+      <Card sx={{ border: "2px solid #6200ea", backgroundColor: "#f0f0f0", padding: 3 }}>
         <Container component="main" maxWidth="xs">
           <CssBaseline />
           <Box
@@ -94,12 +97,9 @@ export default function SignUp() {
               alignItems: 'center',
             }}
           >
-            <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
-              <LockOutlinedIcon />
+            <Avatar sx={{ m: 1, bgcolor: 'transparent' }}>
+              <LockIcon fontSize="large" color="primary" />
             </Avatar>
-            <Typography component="h1" variant="h5">
-              Sign up
-            </Typography>
             <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 3 }}>
               <Grid container spacing={2}>
                 <Grid item xs={12}>
@@ -110,6 +110,7 @@ export default function SignUp() {
                     label="Email Address"
                     name="email"
                     autoComplete="email"
+                    variant="outlined"
                   />
                 </Grid>
                 <Grid item xs={12}>
@@ -121,6 +122,7 @@ export default function SignUp() {
                     type="password"
                     id="password"
                     autoComplete="new-password"
+                    variant="outlined"
                   />
                 </Grid>
                 <Grid item xs={12}>
@@ -132,6 +134,7 @@ export default function SignUp() {
                     type="password"
                     id="passwordConfirm"
                     autoComplete="new-password"
+                    variant="outlined"
                   />
                 </Grid>
               </Grid>
@@ -158,3 +161,5 @@ export default function SignUp() {
     </ThemeProvider>
   );
 }
+
+
