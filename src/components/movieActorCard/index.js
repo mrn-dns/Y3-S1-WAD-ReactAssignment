@@ -15,7 +15,7 @@ import Avatar from '@mui/material/Avatar';
 export default function MovieCard({actors,action}) {
 
   return (
-    <Card sx={{ maxWidth: 345 }}>
+    <Card sx={{ maxWidth: 345, border: "2px solid black", transition: "transform 0.3s", '&:hover': { transform: 'scale(1.05)', boxShadow: '0 0 10px rgba(128, 0, 128, 0.5)' }, backgroundColor: "#f0f0f0", boxShadow: "0 0 10px rgba(0, 0, 0, 0.2)", '& .MuiCardContent-root': { color: 'black', '& h2': { color: 'purple' } } }}>
       <CardHeader
         avatar={
           actors.favorite ? (

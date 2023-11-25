@@ -44,7 +44,7 @@ export default function MovieCard({movie,action}) {
   // };
 
   return (
-    <Card style={{ maxWidth: 300, margin: 'auto', marginTop: 20, padding: 16, borderRadius: 8, boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)', backgroundColor: '#2196F3', color: '#fff' }}>
+    <Card sx={{ maxWidth: 345, border: "2px solid black", transition: "transform 0.3s", '&:hover': { transform: 'scale(1.05)', boxShadow: '0 0 10px rgba(128, 0, 128, 0.5)' }, backgroundColor: "#f0f0f0", boxShadow: "0 0 10px rgba(0, 0, 0, 0.2)", '& .MuiCardContent-root': { color: 'black', '& h2': { color: 'purple' } } }}>
       <CardHeader
         avatar={
           movie.favorite ? (
