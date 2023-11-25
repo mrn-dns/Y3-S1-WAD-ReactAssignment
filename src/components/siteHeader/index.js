@@ -8,6 +8,7 @@ import WavingHandIcon from '@mui/icons-material/WavingHand';
 import LockIcon from '@mui/icons-material/Lock';
 import MenuIcon from "@mui/icons-material/Menu";
 import MenuItem from "@mui/material/MenuItem";
+import Divider from "@mui/material/Divider";
 import Menu from "@mui/material/Menu";
 import { useNavigate } from "react-router-dom";
 import { styled } from '@mui/material/styles';
@@ -33,7 +34,7 @@ const SiteHeader = ({ history }) => {
     { label: "Popular", path: "/movies/popularmovies" },
     { label: "🌟Top Rated", path: "/movies/topratedmovies" },
     { label: "Actors", path: "/actors" },
-    { label: "🔥Actors", path: "/actors/popularactors" },
+    { label: "Trending Actors", path: "/actors/popularactors" },
     { label: "Login", path: "/users/login", icon: <WavingHandIcon /> },
     { label: "Signup", path: "/users/signup", icon: <LockIcon /> },
 
@@ -84,26 +85,28 @@ const SiteHeader = ({ history }) => {
                   onClose={() => setAnchorEl(null)}
                 >
                   {menuOptions.map((opt) => (
-                    <MenuItem
-                      key={opt.label}
-                      onClick={() => handleMenuSelect(opt.path)}
-                    >
-                      {opt.label}
-                    </MenuItem>
+                    <React.Fragment key={opt.label}>
+                      <MenuItem onClick={() => handleMenuSelect(opt.path)}>
+                        {opt.label}
+                      </MenuItem>
+                      {opt.label === "🌟Top Rated" || opt.label === "Actors" ? <Divider sx={{ borderColor: 'white' }}/> : null}
+                    </React.Fragment>
                   ))}
                 </Menu>
               </>
             ) : (
               <>
-                {menuOptions.map((opt) => (
-                  <Button
-                    key={opt.label}
-                    color="inherit"
-                    startIcon={opt.icon}
-                    onClick={() => handleMenuSelect(opt.path)}
-                  >
-                    {opt.label}
-                  </Button>
+                {menuOptions.map((opt,index) => (
+                 <React.Fragment key={opt.label}>
+                 <Button
+                   color="inherit"
+                   startIcon={opt.icon}
+                   onClick={() => handleMenuSelect(opt.path)}
+                 >
+                   {opt.label}
+                 </Button>
+                 {index === 5 || index === menuOptions.length - 3 ? <Divider orientation="vertical" flexItem sx={{ borderColor: 'white' }} /> : null}
+               </React.Fragment>
                 ))}
               </>
             )}
