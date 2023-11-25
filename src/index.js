@@ -18,6 +18,9 @@ import MoviesContextProvider from "./contexts/moviesContext";
 import MovieActorsPage from "./pages/movieActorsPage";
 import PopularMovieActorsPage from "./pages/popularMovieActorsPage";
 import MovieActorDetailsPage from "./pages/movieActorsDetailsPage";
+import LoginPage from "./pages/loginPage";
+import SignUpPage from './pages/signupPage';
+import PrivateRoutes from "./components/privateRoutes/"
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -50,6 +53,8 @@ const App = () => {
         <Route path="/actors/popularactors" element={<PopularMovieActorsPage />} />
         <Route path="/" element={<HomePage />} />
         <Route path="*" element={ <Navigate to="/" /> } />
+        <Route path="/users/signup" element={<SignUpPage />} />
+        <Route path="/users/login" element={<LoginPage />} />
       </Routes>
       </MoviesContextProvider>
     </BrowserRouter>
