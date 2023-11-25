@@ -1,46 +1,64 @@
 # Assignment 1 - ReactJS app.
 
-Name: [your name]
+Name: Denis Remus Marincas
 
 ## Overview.
 
-[A brief statement on the content of this repository.]
+This repository contains the 2023, 3rd year, first semester Web App Development assignment. A web application which offers authentication through FIREBASE, uses the TMDB APIs in order to pull in information about the movies and acotrs displayed on the page. Presents sorting features such as genre sorting, gender sorting and name sorting. Extensive linking between movies and actors, casts and movies.
 
 ### Features.
-[ A bullet-point list of the __new features__ you added to the Movies Fan app (and any modifications to existing features) .]
- 
-+ Feature 1
-+ Feature 2
-+ Feature 3
-+ etc
-+ etc
+
++ __Scroll up button__ was added
++ Actors can now be __sorted by gender__
++ __Signup and login__ provided by __Firebase__ (Fully working)
++ __Pagination__ element introduced (not fully working)
++ __Extensive linking__ between movies and actors
++ Users can now view __similar movies__ of a selected movie
++ Actors have a list of all movies they played in
++ Added many new icons
++ Changed style of movieCards and actorCards
++ Removed movie and actor filtering cards and placed filtering utility in movie/actor header
++ User can view __full cast list__ by selecting a movie
++ __TMDB actor profile__ is now available on actor details page
++ Now playing movies page
++ Popular movies page
++ Actors page
++ Similar movies page
++ Trending actors page
++ Login/Signup page 
 
 ## Setup requirements.
 
-[ Outline any non-standard setup steps necessary to run your app locally after cloning the repo.]
++ npm install firebase
+Other than firebase, no extra non-standard procedures were required to setup the repository. I cloned the movie-labs repository locally and used npm install.
 
 ## API endpoints.
 
-[ List the __additional__ TMDB endpoints used, giving the description and pathname for each one.] 
-
-e.g.
-+ Discover list of movies - discover/movie
-+ Movie details - movie/:id
-+ Movie genres = /genre/movie/list
++ List of movies that are currently playing - movies/nowplayingmovies 
++ List of current popular movies - movies/popularmovies
++ List of all time top rated movies - movies/topratedmovies
++ List of similar movies - movies/:id/similar
++ List of actors - actors/
++ Actor details page - actors/:id
++ List of popular actors - actors/popularactors
++ TMDB actor details page - https://www.themoviedb.org/person/${actors.id}
++ TMDB movie cast page - https://www.themoviedb.org/movie/${movie.id}/cast
++ TMDB list of movies in which particular actor played - https://api.themoviedb.org/3/person/${id}/movie_credits
 
 ## Routing.
 
-[ List the __new routes__ supported by your app and state the associated page.]
++ /movies/popularmovies - This route showcases a page with popular movies.
++ /movies/:id/similar - This route showcases a page with similar movies as the previous one.
++ /movies/topratedmovies - This route showcases a page with all time top rated movies.
++ /movies/nowplayingmovies - This route showcases a page with movies that are currently playing.
++ actors/ - This route showcases a page with actors.
++ actors/:id - This route showcases a page with the details of a particular actor.
++ actors/popularactors - This route showcases a page with popularactors 
++ Signup page - users/signup
++ Login page - users/login
 
-+ /blogs - displays all published blogs.
-+ /blogs/:id - displays a particular blog.
-+ /blogs/:id/comments - detail view of a particular blog and its comments.
-+ etc.
-
-[If relevant, state what aspects of your app are protected (i.e. require authentication) and what is public.]
 
 ## Independent learning (If relevant).
 
-Itemize the technologies/techniques you researched independently and adopted in your project, 
-i.e. aspects not covered in the lectures/labs. Include the source code filenames that illustrate these 
-(we do not require code excerpts) and provide references to the online resources that helped you (articles/blogs).
++ __Scroll up button__ - https://juliapottinger.com/react-gatsby-scroll-to-top/
++ __Firebase__ - https://www.youtube.com/watch?v=Vv_Oi7zPPTw&t=780s
