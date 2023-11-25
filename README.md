@@ -4,7 +4,7 @@ Name: Denis Remus Marincas
 
 ## Overview.
 
-This repository contains the 2023, 3rd year, first semester Web App Development assignment. A web application which offers authentication through FIREBASE, uses the TMDB APIs in order to pull in information about the movies and acotrs displayed on the page. Presents sorting features such as genre sorting, gender sorting and name sorting. Extensive linking between movies and actors, casts and movies.
+This repository contains the 2023, 3rd year, first semester Web App Development assignment. A web application which offers authentication through FIREBASE, uses the TMDB APIs in order to pull in information about the movies and actors displayed on the page. Presents sorting features such as genre sorting, gender sorting and name sorting. Extensive linking between movies and actors, casts and movies.
 
 ### Features.
 
@@ -29,8 +29,8 @@ This repository contains the 2023, 3rd year, first semester Web App Development 
 
 ## Setup requirements.
 
-+ npm install firebase
 Other than firebase, no extra non-standard procedures were required to setup the repository. I cloned the movie-labs repository locally and used npm install.
++ npm install firebase
 
 ## API endpoints.
 
