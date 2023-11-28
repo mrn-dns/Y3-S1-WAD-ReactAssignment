@@ -66,3 +66,6 @@ Other than firebase, no extra non-standard procedures were required to setup the
 All documentation is included in this section.
 + __Scroll up button__ - https://juliapottinger.com/react-gatsby-scroll-to-top/
 + __Firebase__ - https://www.youtube.com/watch?v=Vv_Oi7zPPTw&t=780s
+               - https://firebase.google.com/docs/auth/
+               - https://firebase.google.com/docs/auth/where-to-start
+               - https://blog.logrocket.com/user-authentication-firebase-react-apps/
