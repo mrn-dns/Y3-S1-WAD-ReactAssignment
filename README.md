@@ -57,10 +57,12 @@ Other than firebase, no extra non-standard procedures were required to setup the
 + Signup page - users/signup
 + Login page - users/login
 
+## GIFS
+![me](https://github.com/mrn-dns/Y3-S1-WAD-ReactAssignment/blob/main/scrollbutton.gif)
+>Showcasing scroll feature
+
 ## Independent learning (If relevant).
 
 All documentation is included in this section.
 + __Scroll up button__ - https://juliapottinger.com/react-gatsby-scroll-to-top/
 + __Firebase__ - https://www.youtube.com/watch?v=Vv_Oi7zPPTw&t=780s
-               - https://firebase.google.com/docs/
-               - https://firebase.google.com/docs/build
